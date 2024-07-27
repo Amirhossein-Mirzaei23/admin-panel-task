@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "IRANSans";
+    src: url("../fonts/eot/IRANSansWeb\(FaNum\).eot"); 
+    src: url("../fonts/eot/IRANSansWeb\(FaNum\).eot") format("embedded-opentype"), 
+    url("../fonts/woff/IRANSansWeb\(FaNum\).woff") format("woff"), 
+    url("../fonts/ttf/IRANSansWeb\(FaNum\).ttf") format("truetype"); 
+    font-weight: normal;
+}
+@font-face {
+    font-family: "IRANSans-light";
+    src: url("../fonts/eot/IRANSansWeb\(FaNum\)_Light.eot"); 
+    src: url("../fonts/eot/IRANSansWeb\(FaNum\)_Light.eot") format("embedded-opentype"), 
+    url("../fonts/woff/IRANSansWeb\(FaNum\)_Light.woff") format("woff"), 
+    url("../fonts/ttf/IRANSansWeb\(FaNum\)_Light.ttf") format("truetype"); 
+    font-weight: normal;
+}
+@font-face {
+  font-family: "IRANSans-medium";
+  src: url("../fonts/eot/IRANSansWeb\(FaNum\)_Medium.eot"); 
+  src: url("../fonts/eot/IRANSansWeb\(FaNum\)_Medium.eot") format("embedded-opentype"), 
+  url("../fonts/woff/IRANSansWeb\(FaNum\)_Medium.woff") format("woff"), 
+  url("../fonts/ttf/IRANSansWeb\(FaNum\)_Medium.ttf") format("truetype"); 
+  font-weight: normal;
+}
+@font-face {
+  font-family: "IRANSans-bold";
+  src: url("../fonts/eot/IRANSansWeb\(FaNum\)_Bold.eot"); 
+  src: url("../fonts/eot/IRANSansWeb\(FaNum\)_Bold.eot") format("embedded-opentype"), 
+  url("../fonts/woff/IRANSansWeb\(FaNum\)_Bold.woff") format("woff"), 
+  url("../fonts/ttf/IRANSansWeb\(FaNum\)_Bold.ttf") format("truetype"); 
+  font-weight: normal;
+}
+
+  html body #app {
+    height: 100%;
+    margin: 0;
+    font-family: 'IRANSans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    direction: rtl;
+  }
+
+.font-light{
+    font-family: 'IRANSans-light';
+  }
+
+.font-medium{
+  font-family: 'IRANSans-medium';
+}
+
+.font-blod{
+  font-family: 'IRANSans-bold';
+}
+
+
+
+
+
+.v-list .v-theme--light .v-list--density-default{
+  box-shadow: none !important;
+  border: 0 !important;
+  padding: 0 0;
+}
+.v-expansion-panel-text__wrapper{
+ padding: 0 0;
+}
+.v-expansion-panel-title {
+  
+  justify-content: space-between;
+  height: 60px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  
+}
+
+
+.no-icon .v-selection-control__wrapper{
+  
+  display: none ;
+  width: 0 px ;
+  height: 0 px;
+  }
+ .v-list-item__content{
+    height: 45px;
+ 
+  }
+ 
