@@ -181,7 +181,7 @@ function getSelectedCategories(categories, type) {
 
   isCategories.value = type === 'panel';
   selectedCategories.value = categories;
-  accessLevel(300,{id:1})
+ 
   createCategoriesTree();
 
  
@@ -313,7 +313,6 @@ const toaster = createToaster({});
   }).then(result => {
     if (result.isConfirmed) {
       console.log('newRole', newRole);
-
       // clear form values
     role.value = ''
     description.value = ''
@@ -325,9 +324,10 @@ const toaster = createToaster({});
   if (panelsRef.value) {
     panelsRef.value.clearSelectedValue();
   }
+  rolePermission.clearValues();
     }
 
-    rolePermission.clearValues();
+  
 
   });
 
