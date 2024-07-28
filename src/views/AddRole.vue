@@ -100,6 +100,7 @@
                 <!-- Radio group for selecting access level -->
                 <v-radio-group
                   class="h-100"
+               
                   @change="(e) => accessLevel(e, permisonCategory)"
                   inline
                 >
@@ -163,6 +164,7 @@ const role = ref('');
 const description = ref('');
 const isActive = ref(false);
 const selectedCategories = ref([]);
+
 const sideBarRef = ref(null)
 const panelsRef = ref(null)
 // Extracts action IDs from the given categories.
@@ -176,13 +178,18 @@ function extractActionIds(data) {
 // Handles the event when categories are selected.
 
 function getSelectedCategories(categories, type) {
+
   isCategories.value = type === 'panel';
   selectedCategories.value = categories;
+  accessLevel(300,{id:1})
   createCategoriesTree();
+
+ 
 }
 
 //  Handles the change in access level for a category.
 function accessLevel(e, category) {
+ 
   selectedCategories.value.forEach(selectedCategory => {
     if (selectedCategory.id === category.id) {
       selectedPermissons.value.push({
@@ -208,6 +215,7 @@ class RolePermission {
   // Filters actions based on category and access level.
 
   filterActions(actions, category, level) {
+   
     return actions.filter(action =>
       isCategories.value
         ? action.product._id === category.id && action.level >= level
@@ -239,6 +247,7 @@ class RolePermission {
   clearValues() {
     this.values = [];
     selectedPermissons.value = [];
+  
   }
 }
 
@@ -304,23 +313,32 @@ const toaster = createToaster({});
   }).then(result => {
     if (result.isConfirmed) {
       console.log('newRole', newRole);
-      rolePermission.clearValues();
-      if (sideBarRef.value) {
+
+      // clear form values
+    role.value = ''
+    description.value = ''
+    isActive.value = false
+
+  if (sideBarRef.value) {
         sideBarRef.value.clearSelectedValue();
   }
   if (panelsRef.value) {
     panelsRef.value.clearSelectedValue();
   }
     }
+
+    rolePermission.clearValues();
+
   });
+
 }
 
 // Creates the categories tree based on selected categories.
 
 async function createCategoriesTree() {
   categorizedActions.value = selectedCategories.value.map(category => {
-    const relatedActions = isCategories.value
-      ? actions.filter(action => action.product._id === category.id)
+    const relatedActions = isCategories.value? 
+      actions.filter(action => action.product._id === category.id)
       : actions.filter(action => action.category === category.id);
 
     return {
